@@ -2,7 +2,7 @@ export function getImageFromApi (url) {
     return url;
 }
 
-const server = 'max.hanotaux.fr';
+const server = 'lerebourg.eu';
 //const server = '192.168.1.16';
 
 

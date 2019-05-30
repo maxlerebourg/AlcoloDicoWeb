@@ -1,7 +1,4 @@
-import {AsyncStorage} from "react-native";
-
-
-const server = 'max.hanotaux.fr';
+const server = 'lerebourg.eu';
 //const server = '192.168.1.16';
 
 export function getImageFromApi (url) {
