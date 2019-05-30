@@ -1,4 +1,4 @@
-const server = 'lerebourg.eu';
+const server = 'www.lerebourg.eu';
 //const server = '192.168.1.16';
 
 export async function myPartyInApi (id) {
