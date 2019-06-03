@@ -2,7 +2,7 @@
     <div class="container">
         <h3>Jeux d'alcool</h3>
         <div class="row">
-            <div class="card col-sm-3 m-auto" v-for="item in data" :id="'game_'+item.id">
+            <div class="card col-sm-4 m-auto" v-for="item in data" :id="'game_'+item.id">
                 <div class="d-flex flex-column">
                     <img class="img-fluid rounded mt-1 mb-1" style="height: 200px; width: 100%; object-fit: cover"
                          :src="item.images.split(',')[0]" :alt="item.name"/>
@@ -14,8 +14,9 @@
                         </span>
                         <i class="fas fa-star text-warning mr-1" style="font-size: 10px"></i>
                     </div>
-                    <a onclick="()=>{}" class="stretched-link"></a>
+                    <a data-toggle="modal" :data-target="'#GameModal_'+item.id" class="stretched-link"></a>
                 </div>
+                <game-modal v-bind:game="item"></game-modal>
             </div>
         </div>
     </div>
@@ -23,8 +24,11 @@
 
 <script>
     import {getListGameFromApi} from '../../API/GameAPI';
+    import GameModal from "./GameModal";
+
     export default {
         name: 'game-list',
+        components: {GameModal},
         data: () => {
             return {
                 data: []
